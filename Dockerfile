@@ -1,7 +1,7 @@
 # syntax=docker/dockerfile:1@sha256:4edf897a3ffa55b89f906fc8cc78afdb3f1834cc9c7083565e611a8a7d5fe99e
 
 # supported versions here: https://hub.docker.com/_/rust
-FROM rust:1.99.1-alpine@sha256:27cd9befd4a05d6f6eb407c3e28365f5092f008bfc5946207cca76ae5179ef23 AS builder
+FROM rust:1.99.1-alpine@sha256:f432d4b8663fbc50b29e33846bf6a1fb9f17f142023598899d641cddf57c6b22 AS builder
 
 # renovate: packageName=https://github.com/redlib-org/redlib branch=main
 ARG REDLIB_REF=ba116c1186f6b0f9d45f0ae50c827e13eb2f5ea2
