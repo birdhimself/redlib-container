@@ -1,7 +1,7 @@
 # syntax=docker/dockerfile:1@sha256:4edf897a3ffa55b89f906fc8cc78afdb3f1834cc9c7083565e611a8a7d5fe99e
 
 # supported versions here: https://hub.docker.com/_/rust
-FROM rust:1.99.1-alpine@sha256:f432d4b8663fbc50b29e33846bf6a1fb9f17f142023598899d641cddf57c6b22 AS builder
+FROM rust:1.99.1-alpine@sha256:44819b27be4c97b0e4d7203bd2e02c4820f97700211b6a37fb4c246a2de59383 AS builder
 
 # renovate: packageName=https://github.com/redlib-org/redlib branch=main
 ARG REDLIB_REF=ba116c1186f6b0f9d45f0ae50c827e13eb2f5ea2
@@ -20,7 +20,7 @@ ENV RUSTFLAGS="-C target-feature=-crt-static"
 RUN --mount=type=cache,target=/usr/local/cargo/registry \
     cargo build --release --locked --bin redlib
 
-FROM alpine:3.24.3@sha256:be2656061b536c1883c4034790e21d0a09c5aaaf51968b89368a3c0371ea2c9a AS release
+FROM alpine:3.24.4@sha256:93b41ef40b1677fce8fcc64ff4af09daddfacf5040afde618bc46c1e2d1cc7d4 AS release
 
 RUN apk add --no-cache ca-certificates libgcc libstdc++
 
